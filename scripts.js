@@ -42,8 +42,22 @@ $(document).ready(function() {
         });
     });
 
+    // radio buttons toggle which type of user is displayed
+    $("#showAll").click(function() {
+        $("#online").show();
+        $("#offline").show();
+    });
 
 
+    $("#showOnline").click(function() {
+        $("#online").show();
+        $("#offline").hide();
+    });
+
+    $("#showOffline").click(function() {
+        $("#offline").show();
+        $("#online").hide();
+    });
 
 
 }); // closing script
