@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // workaround to twitch TV's new key protocol from FCC
-    var api = "api.js";
+    var api = "./resources/api.js";
 
     $.getJSON(api, function(data) {
 
@@ -20,18 +20,18 @@ $(document).ready(function() {
 
         // repeat element with each of the 4 data pieces of JSON object data for each object in  online array
         $.each(online, function() {
-            $("<img></img>").appendTo("#online").attr({src: this.stream.logo, class: 'accountLogo'});
-            $("<a><p>" + this.stream.display_name + "</p></a>").appendTo("#online").attr({class: 'accountName', target: "_blank",href: this.stream.url});
-            $("<p>" + this.stream.status + "</p>").appendTo("#online").attr({class: 'accountStatus'});
+            $("<img></img>").appendTo("#online").attr({src: this.stream.logo});
+            $("<a><p>" + this.stream.display_name + "</p></a>").appendTo("#online").attr({target: "_blank",href: this.stream.url});
+            $("<p><i>" + this.stream.status + "</i></p>").appendTo("#online");
             $("<br>").appendTo("#online");
         });
 
         // repeat element with each of the 2 data pieces of JSON object data for each object in  offline array
         $.each(offline, function() {
             if (this.display_name) {
-                $("<img></img>").appendTo("#offline").attr({src: 'offline.png', class: 'accountLogo'});
-                $("<a><p>" + this.display_name + "</p></a>").appendTo("#offline").attr({class: 'accountName', target: "_blank",href: this._links.channel});
-                $("<p>Account is not currently streaming.</p>").appendTo("#offline").attr({class: 'accountStatus'});
+                $("<img></img>").appendTo("#offline").attr({src: './style/img/offline.png'});
+                $("<a><p>" + this.display_name + "</p></a>").appendTo("#offline").attr({target: "_blank",href: this._links.channel});
+                $("<p><i>Account is not currently streaming.</i></p>").appendTo("#offline");
                 $("<br>").appendTo("#offline");
             } else {
                 return;
