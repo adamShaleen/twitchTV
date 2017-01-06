@@ -21,20 +21,18 @@ $(document).ready(function() {
         // repeat element with each of the 4 data pieces of JSON object data for each object in  online array
         $.each(online, function() {
             $("<img></img>").appendTo("#online").attr({src: this.stream.logo, class: 'accountLogo'});
-            $("<p>" + this.stream.display_name + "</p>").appendTo("#online").attr({class: 'accountName'});
+            $("<a><p>" + this.stream.display_name + "</p></a>").appendTo("#online").attr({class: 'accountName', target: "_blank",href: this.stream.url});
             $("<p>" + this.stream.status + "</p>").appendTo("#online").attr({class: 'accountStatus'});
-            $("<a>LINK</a>").appendTo("#online").attr({target: "_blank",href: this.stream.url, class: 'accountLink'});
             $("<br>").appendTo("#online");
-            $("<hr>").appendTo("#online");
         });
 
         // repeat element with each of the 2 data pieces of JSON object data for each object in  offline array
         $.each(offline, function() {
             if (this.display_name) {
-                $("<p>" + this.display_name + "</p>").appendTo("#offline").attr({class: 'accountName'});
-                $("<a>LINK</a>").appendTo("#offline").attr({target: "_blank",href: this._links.channel, class: 'accountLink'});
+                $("<img></img>").appendTo("#offline").attr({src: 'offline.png', class: 'accountLogo'});
+                $("<a><p>" + this.display_name + "</p></a>").appendTo("#offline").attr({class: 'accountName', target: "_blank",href: this._links.channel});
+                $("<p>Account is not currently streaming.</p>").appendTo("#offline").attr({class: 'accountStatus'});
                 $("<br>").appendTo("#offline");
-                $("<hr>").appendTo("#offline");
             } else {
                 return;
             }
@@ -47,7 +45,6 @@ $(document).ready(function() {
         $("#online").show();
         $("#offline").show();
     });
-
 
     $("#showOnline").click(function() {
         $("#online").show();

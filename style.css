@@ -1,3 +1,64 @@
-img {
+body {
+    margin: auto;
+    padding: 10px;
+    background: #6441A5;
+    font-family: helvetica;
+}
+
+#appContainer {
+    margin: auto;
+    width: 50%;
+    border: 1px solid;
+    padding: 10px;
+    background: #ad9bd0;
+}
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #6441A5;
+}
+
+#logoContainer img {
+    width: 300px;
+    height: 150px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.optionsContainer {
+    padding: 10px;
+    margin: 10px;
+    background: white;
+    border: 1px solid #6441A5;
+    text-align: center;
+}
+
+.dynamicContent {
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #6441A5;
+}
+
+#online img {
     width: 50px;
+}
+
+#offline img {
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

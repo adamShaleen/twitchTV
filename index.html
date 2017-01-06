@@ -8,14 +8,17 @@
     <body>
 
         <div id="appContainer">
-            <h3>Twitch TV</h3>
-            <input id="showAll" name="display" type="radio" checked="checked">All</input><br>
-            <input id="showOnline" name="display" type="radio">Online</input><br>
-            <input id="showOffline" name="display" type="radio">Offline</input>
-            <div id="online">
+            <div id="logoContainer"><img src="twitchLogo.svg" id="logo"></img></div>
+            <div class="optionsContainer">
+                <h1>Streaming Users</h1>
+                <input id="showAll" name="display" type="radio" checked="checked">All</input>
+                <input id="showOnline" name="display" type="radio">Online</input>
+                <input id="showOffline" name="display" type="radio">Offline</input>
+            </div>
+            <div id="online" class="dynamicContent">
                 <h4>Online Users</h4>
             </div>
-            <div id="offline">
+            <div id="offline" class="dynamicContent">
                 <h4>Offline users</h4>
             </div>
         </div>
