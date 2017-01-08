@@ -1,5 +1,4 @@
 body {
-    margin: auto;
     padding: 10px;
     background: #6441A5;
     font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
@@ -27,7 +26,7 @@ body {
     height: 150px;
 }
 
-h1, h4 {
+h1 {
     text-align: center;
 }
 
@@ -39,22 +38,15 @@ h1, h4 {
     text-align: center;
 }
 
-.dynamicContent {
+.dynamicContainer {
     background: white;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     border: 1px solid #6441A5;
 }
 
 .dynamicContent img {
     border-radius: 100%;
-}
-
-#online img {
-    width: 50px;
-}
-
-#offline img {
     width: 50px;
 }
 

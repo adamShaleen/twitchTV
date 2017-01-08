@@ -29,7 +29,7 @@ $(document).ready(function() {
         // repeat element with each of the 2 data pieces of JSON object data for each object in  offline array
         $.each(offline, function() {
             if (this.display_name) {
-                $("<img></img>").appendTo("#offline").attr({src: './style/img/offline.png'});
+                $("<img></img>").appendTo("#offline").attr({src: './style/img/offline.png', class: 'offlineImage'});
                 $("<a><p>" + this.display_name + "</p></a>").appendTo("#offline").attr({target: "_blank",href: this._links.channel});
                 $("<p><i>Account is not currently streaming.</i></p>").appendTo("#offline");
                 $("<br>").appendTo("#offline");
@@ -55,6 +55,5 @@ $(document).ready(function() {
         $("#offline").show();
         $("#online").hide();
     });
-
 
 }); // closing script
